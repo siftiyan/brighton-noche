@@ -2,19 +2,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA 10 KELOMPOK
-    const initialTeams = [
-        { id: 1, name: "TIM 01", title: "01", members: 10, loves: 14 },
-        { id: 2, name: "TIM 02", title: "02", members: 10, loves: 12 },
-        { id: 3, name: "TIM 03", title: "03", members: 10, loves: 11 },
-        { id: 4, name: "TIM 04", title: "04", members: 10, loves: 10 },
-        { id: 5, name: "TIM 05", title: "05", members: 10, loves: 10 },
-        { id: 6, name: "TIM 06", title: "06", members: 10, loves: 10 },
-        { id: 7, name: "TIM 07", title: "07", members: 10, loves: 10 },
-        { id: 8, name: "TIM 08", title: "08", members: 10, loves: 9 },
-        { id: 9, name: "TIM 09", title: "09", members: 10, loves: 9 },
-        { id: 10, name: "TIM 10", title: "10", members: 10, loves: 8 }
+const initialTeams = [
+        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 10, loves: 14 },
+        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 12 },
+        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 11 },
+        { id: 4, name: "GROW", title: "GROW", members: 10, loves: 10 },
+        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 10 },
+        { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 10 },
+        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 10 },
+        { id: 8, name: "RISE", title: "RISE", members: 9, loves: 9 },
+        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 9, loves: 9 },
+        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 9, loves: 8 }
     ];
-
+    
     let teamsData = JSON.parse(localStorage.getItem('brighton_noche_teams')) || initialTeams;
     const teamsContainer = document.getElementById('teamsContainer');
     let teamsChart = null;

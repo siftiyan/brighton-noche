@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kelompok - Life at Brighton Noche 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kelompok.css">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo-brighton.png" alt="Brighton Real Estate" class="brighton-nav-logo">
+                <div class="brand-divider"></div>
+                <div class="brand-text">
+                    <span class="brand-sub">LIFE AT BRIGHTON</span>
+                    <span class="brand-main">NOCHE 2026</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#hero" class="nav-item">Beranda</a>
+                <a href="index.html#scoreboard" class="nav-item">Grafik Tim</a>
+                <a href="kelompok.html" class="nav-item active highlight-nav"><i class="fa-solid fa-users"></i> Daftar Kelompok</a>
+                <a href="index.html#schedule" class="nav-item">Rundown</a>
+                <a href="index.html#transport" class="nav-item">Akomodasi</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqkaD5r7u9-YHUNoKOg950dkIO7lkdUXhkT6hwPVRhgtVIwg/viewform" target="_blank" class="nav-cta-btn"><i class="fa-solid fa-map-pin"></i> Form Kumpul</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Menu Navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="teams-page-header">
+        <div class="container text-center">
+            <span class="sec-subtitle">PEMBAGIAN RESMI 10 KELOMPOK</span>
+            <h1 class="page-title">DAFTAR TIM NOCHE 2026</h1>
+            <div class="sec-decor-line"><span></span><i class="fa-solid fa-people-group"></i><span></span></div>
+            <p class="sec-desc">Cari nama Anda atau pilih tim untuk melihat anggota kelompok, kantor asal, dan divisi penugasan.</p>
+            
+            <!-- Search & Filter Bar -->
+            <div class="search-filter-card">
+                <div class="search-input-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="memberSearch" placeholder="Cari nama anggota, kantor, atau divisi..." autocomplete="off">
+                </div>
+                <div class="filter-pills" id="teamFilterPills">
+                    <button class="filter-pill active" data-team="ALL">Semua Tim</button>
+                    <!-- Pills di-generate oleh JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="section-padding bg-cream" style="padding-top: 30px;">
+        <div class="container">
+            <div class="teams-cards-grid" id="teamsListContainer">
+                <!-- Rendered dynamically by kelompok.js -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Brighton Real Estate Indonesia. HRD Brighton.</p>
+            <p style="margin-top: 8px;"><a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a></p>
+        </div>
+    </footer>
+
+    <script src="kelompok.js"></script>
+</body>
+</html>
