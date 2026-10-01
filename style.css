@@ -553,7 +553,7 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------------------------------------------------
-   GRAFIK LIVE & BLOOM SYSTEM STYLING
+   GRAFIK LIVE & TOURNAMENT RULES (LOVE SYSTEM)
    ------------------------------------------------------------- */
 .games-rule-banner {
     display: grid;
@@ -582,11 +582,23 @@ h1, h2, h3, h4 {
     justify-content: center;
     font-size: 1.25rem;
     flex-shrink: 0;
+    background: rgba(117, 76, 41, 0.1);
+    color: var(--earth-warm);
 }
 
-.bloom-badge-icon {
-    background: rgba(67, 160, 71, 0.12);
-    color: #2E7D32;
+/* Ikon Hati Merah dan Berdenyut di Banner Aturan */
+.heart-icon,
+.rule-icon.heart-icon {
+    background: rgba(230, 57, 70, 0.12) !important;
+    color: #e63946 !important;
+}
+
+.heart-icon i,
+.rule-icon.heart-icon i,
+.sec-decor-line .fa-heart {
+    color: #e63946 !important;
+    animation: heartBeat 1.8s infinite ease-in-out;
+    display: inline-block;
 }
 
 .rule-col strong {
@@ -602,7 +614,7 @@ h1, h2, h3, h4 {
     line-height: 1.4;
 }
 
-/* Bloom Philosophy Grid (Rules & The Goal) */
+/* Philosophy Grid (Rules & The Goal) */
 .bloom-philosophy-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -855,17 +867,14 @@ h1, h2, h3, h4 {
     margin-bottom: 14px;
 }
 
-.bloom-box-highlight {
-    background: rgba(232, 245, 233, 0.5) !important;
-    border: 1px dashed rgba(67, 160, 71, 0.5) !important;
-}
-
 .team-love-box {
+    background: rgba(244, 235, 225, 0.5);
     border-radius: 12px;
     padding: 12px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: 1px dashed var(--accent-gold);
 }
 
 .love-score-wrap {
@@ -874,15 +883,34 @@ h1, h2, h3, h4 {
     gap: 8px;
 }
 
-.bloom-flower-icon {
-    font-size: 1.7rem;
-    color: #43A047;
-    animation: bloomPulse 2.4s infinite ease-in-out;
+/* ==============================================================
+   ANIMASI DENYUT HATI & WARNA MERAH MENYALA
+   ============================================================== */
+.love-score-wrap i,
+.love-score-wrap .fa-heart {
+    font-size: 1.75rem;
+    color: #e63946 !important;
+    animation: heartBeat 1.8s infinite ease-in-out;
+    filter: drop-shadow(0 2px 6px rgba(230, 57, 70, 0.35));
+    display: inline-block;
 }
 
-@keyframes bloomPulse {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.18) rotate(6deg); }
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.22);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.16);
+    }
+    70% {
+        transform: scale(1);
+    }
 }
 
 .love-points-count {
@@ -1695,7 +1723,7 @@ h1, h2, h3, h4 {
     .meta-val {
         font-size: 0.95rem;
     }
-    
+
     .destination-showcase,
     .outbound-triad-grid,
     .pickup-grid {
@@ -1705,7 +1733,7 @@ h1, h2, h3, h4 {
     .qr-dedicated-card {
         max-width: 100%;
     }
-    
+
     .qr-image-wrapper {
         width: 170px;
         height: 170px;
