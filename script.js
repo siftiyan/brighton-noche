@@ -3,16 +3,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA 10 KELOMPOK
 const initialTeams = [
-        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 10, loves: 14 },
-        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 12 },
-        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 11 },
+        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 10, loves: 10 },
+        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 10 },
+        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 10 },
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 10 },
         { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 10 },
         { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 10 },
         { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 10 },
-        { id: 8, name: "RISE", title: "RISE", members: 9, loves: 9 },
-        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 9, loves: 9 },
-        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 9, loves: 8 }
+        { id: 8, name: "RISE", title: "RISE", members: 9, loves: 10 },
+        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 9, loves: 10 },
+        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 9, loves: 10 }
     ];
     
     let teamsData = JSON.parse(localStorage.getItem('brighton_noche_teams')) || initialTeams;

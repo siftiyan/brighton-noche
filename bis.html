@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Daftar Kelompok - Life at Brighton Noche 2026</title>
+    <title>Pembagian Bis & Transportasi - Life at Brighton Noche 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="kelompok.css">
+    <link rel="stylesheet" href="bis.css">
     
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +28,12 @@
             
             <nav class="nav-links" id="navLinks">
                 <a href="index.html#hero" class="nav-item">Beranda</a>
-                <a href="kelompok.html" class="nav-item active highlight-nav"><i class="fa-solid fa-users"></i> Kelompok</a>
+                <a href="kelompok.html" class="nav-item"><i class="fa-solid fa-users"></i> Kelompok</a>
+                <a href="bis.html" class="nav-item active highlight-nav"><i class="fa-solid fa-bus"></i> Pembagian Bis</a>
                 <a href="index.html#scoreboard" class="nav-item"><i class="fa-solid fa-chart-simple"></i> Grafik Tim</a>
                 <a href="index.html#schedule" class="nav-item">Rundown</a>
                 <a href="index.html#dresscode" class="nav-item">Dress Code</a>
                 <a href="index.html#transport" class="nav-item">Akomodasi</a>
-                <a href="index.html#rules" class="nav-item">Tata Tertib</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqkaD5r7u9-YHUNoKOg950dkIO7lkdUXhkT6hwPVRhgtVIwg/viewform" target="_blank" class="nav-cta-btn"><i class="fa-solid fa-map-pin"></i> Form Kumpul</a>
             </nav>
 
@@ -46,30 +46,31 @@
     </header>
 
     <!-- Header & Search Section -->
-    <section class="teams-page-header">
+    <section class="bis-page-header">
         <div class="container text-center">
-            <span class="sec-subtitle">PEMBAGIAN RESMI 10 KELOMPOK</span>
-            <h1 class="page-title">DAFTAR TIM NOCHE 2026</h1>
-            <div class="sec-decor-line"><span></span><i class="fa-solid fa-people-group"></i><span></span></div>
-            <p class="sec-desc">Ketik nama Anda di kolom pencarian atau klik tombol kelompok untuk melihat rekan satu tim, lokasi kantor, dan divisi.</p>
+            <span class="sec-subtitle">LOGISTIK & AKOMODASI RESMI</span>
+            <h1 class="page-title">PEMBAGIAN KENDARAAN & BIS</h1>
+            <div class="sec-decor-line"><span></span><i class="fa-solid fa-bus-simple"></i><span></span></div>
+            <p class="sec-desc">Ketik nama Anda di kolom pencarian atau klik armada untuk mengecek manifest penumpang dan titik kumpul.</p>
             
             <div class="search-filter-card">
                 <div class="search-input-wrap">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="memberSearch" placeholder="Cari nama Anda, nama tim, kantor cabang, atau divisi..." autocomplete="off">
+                    <input type="text" id="busSearchInput" placeholder="Cari nama Anda, nama armada, kantor, divisi, atau titik jemput..." autocomplete="off">
                 </div>
-                <div class="filter-pills" id="teamFilterPills">
-                    <button class="filter-pill active" data-team="ALL">Semua Tim (10)</button>
+                <div class="filter-pills" id="vehicleFilterPills">
+                    <button class="filter-pill active" data-vehicle="ALL">Semua Armada (4)</button>
+                    <!-- Pills armada di-generate oleh bis.js -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cards Grid -->
-    <main class="section-padding bg-cream" style="padding-top: 40px;">
+    <!-- Main Content List -->
+    <main class="section-padding bg-cream" style="padding-top: 35px;">
         <div class="container">
-            <div class="teams-cards-grid" id="teamsListContainer">
-                <!-- Rendered by kelompok.js -->
+            <div class="vehicles-cards-grid" id="vehiclesContainer">
+                <!-- Rendered dynamically by bis.js -->
             </div>
         </div>
     </main>
@@ -77,13 +78,13 @@
     <!-- Footer -->
     <footer class="luxury-footer">
         <div class="container text-center">
-            <p>&copy; 2026 Brighton Real Estate Indonesia. All Rights Reserved. HRD Brighton.</p>
+            <p>&copy; 2026 Brighton Real Estate Indonesia. HRD Brighton.</p>
             <p style="margin-top: 10px;">
                 <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda Utama</a>
             </p>
         </div>
     </footer>
 
-    <script src="kelompok.js"></script>
+    <script src="bis.js"></script>
 </body>
 </html>
