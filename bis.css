@@ -15,15 +15,226 @@
     margin-bottom: 12px;
 }
 
+/* --------------------------------------------------------------
+   BAGIAN RUTE & JADWAL PENJEMPUTAN (VISUAL TIMELINE CARD)
+   -------------------------------------------------------------- */
+.route-header-wrap {
+    margin-bottom: 35px;
+}
+
+.route-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--earth-warm);
+    font-size: 1.35rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.route-main-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    color: var(--primary-deep);
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.route-sub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-forest);
+    color: var(--gold-bright);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 18px;
+    border-radius: 30px;
+}
+
+.bus-schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 26px;
+    margin-bottom: 30px;
+}
+
+.bus-sched-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-luxury);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.bus-sched-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(31, 40, 31, 0.12);
+}
+
+.bus-sched-top {
+    background: linear-gradient(135deg, var(--primary-deep), var(--primary-forest));
+    padding: 18px 22px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+.bus-sched-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(197, 168, 128, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--gold-bright);
+    border: 1px solid var(--accent-gold);
+    flex-shrink: 0;
+}
+
+.bus-sched-top h3 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--gold-bright);
+    margin: 0 0 2px 0;
+}
+
+.bus-sched-top p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0;
+}
+
+.bus-timeline {
+    padding: 26px 22px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.bus-timeline::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    bottom: 36px;
+    left: 41px;
+    width: 2px;
+    border-left: 2px dashed rgba(197, 168, 128, 0.6);
+    z-index: 1;
+}
+
+.b-time-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.b-time-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bg-cream);
+    border: 2px solid var(--accent-gold);
+    color: var(--earth-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.item-transit .b-time-badge {
+    background: #E8F5E9;
+    color: #2E7D32;
+    border-color: #81C784;
+}
+
+.item-depart .b-time-badge {
+    background: #FFF3E0;
+    color: #E65100;
+    border-color: #FFB74D;
+}
+
+.item-arrive .b-time-badge {
+    background: var(--accent-gold);
+    color: #FFFFFF;
+    border-color: var(--gold-bright);
+}
+
+.b-time-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.b-hours {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--primary-deep);
+    letter-spacing: 0.5px;
+}
+
+.b-time-desc strong {
+    font-size: 0.92rem;
+    color: var(--primary-forest);
+    margin-top: 2px;
+}
+
+.b-time-desc small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Banner Catatan Perjalanan (Bawah Kartu) */
+.trip-notes-banner {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px 24px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-luxury);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.trip-note-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-deep);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.trip-note-item i {
+    font-size: 1.25rem;
+    color: var(--earth-warm);
+}
+
+/* --------------------------------------------------------------
+   SEARCH & FILTERS
+   -------------------------------------------------------------- */
 .search-filter-card {
     max-width: 880px;
-    margin: 30px auto 0;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(197, 168, 128, 0.4);
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
     border-radius: 22px;
     padding: 22px;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--shadow-luxury);
 }
 
 .search-input-wrap {
@@ -66,12 +277,12 @@
 }
 
 .filter-pill {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: #FFFFFF;
+    background: var(--bg-cream);
+    border: 1px solid rgba(197, 168, 128, 0.4);
+    color: var(--primary-deep);
     padding: 7px 16px;
     border-radius: 30px;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     cursor: pointer;
     transition: var(--transition);
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -80,9 +291,9 @@
 
 .filter-pill:hover,
 .filter-pill.active {
-    background: var(--accent-gold);
-    color: #1F281F;
-    border-color: var(--accent-gold);
+    background: var(--primary-deep);
+    color: var(--gold-bright);
+    border-color: var(--primary-deep);
     font-weight: 700;
 }
 
@@ -283,4 +494,12 @@ tr.row-pic .col-no {
     text-align: center;
     padding: 60px 20px;
     color: var(--text-muted);
+}
+
+@media(max-width: 768px) {
+    .trip-notes-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
 }
