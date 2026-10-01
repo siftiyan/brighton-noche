@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Kelvin Christian Sanger", loc: "BRIND", div: "IT" },
                 { name: "Zulkifli Alamsyah", loc: "Brighton Gresik", div: "Operasional" },
                 { name: "Djinin", loc: "BRIND", div: "Operasional" },
-                { name: "Dipo", loc: "BRIND", div: "Tax & Accounting" }
+                { name: "Saiful", loc: "BRIND", div: "Tax & Accounting" }
             ]
         },
         {
