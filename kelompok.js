@@ -1,135 +1,134 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DATA RESMI 10 KELOMPOK BRIGHTON NOCHE 2026 (Sumber: Nama kelompok noche.xlsx)
+    // DATA RESMI 10 KELOMPOK BRIGHTON NOCHE 2026 (Update Terbaru dari kelompok update.xlsx)
     const teamsDataFull = [
         {
             name: "BRIGHT",
             members: [
-                { name: "Duta Rahma Safira", loc: "BRIND", div: "BPI" },
+                { name: "Fira", loc: "BRIND", div: "BPI" },
                 { name: "Keyza", loc: "BRIND", div: "Marcom" },
-                { name: "Putri Yunita Sari", loc: "Brighton Priority Jemursari", div: "Finance" },
-                { name: "Wachyu Pujiyanto", loc: "BRIND", div: "Finance" },
-                { name: "Saikhu Rokhim", loc: "Brighton Priority Jemursari", div: "General Affair & Purchasing" },
-                { name: "Binsar Damanik", loc: "BRIND", div: "IT" },
-                { name: "Annisa Rizki Utami", loc: "Brighton Central Sidoarjo", div: "Operasional" },
-                { name: "Indah Nafitri", loc: "Brighton Signature HR Muhammad", div: "Operasional" },
-                { name: "Fransisca Margareth Putri Sayogo", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
-                { name: "Sharley Gita Dwi Wulandari", loc: "BRIND", div: "Tax & Accounting" }
+                { name: "Nita", loc: "Brighton Priority Jemursari", div: "Finance" },
+                { name: "Wachyu", loc: "BRIND", div: "Finance" },
+                { name: "Rokhim", loc: "Brighton Priority Jemursari", div: "General Affair & Purchasing" },
+                { name: "Binsar", loc: "BRIND", div: "IT" },
+                { name: "Annisa", loc: "Brighton Central Sidoarjo", div: "Operasional" },
+                { name: "Indah", loc: "Brighton Signature HR Muhammad", div: "Operasional" },
+                { name: "Sisca", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
+                { name: "Sharley", loc: "BRIND", div: "Tax & Accounting" }
             ]
         },
         {
             name: "RESPECT",
             members: [
-                { name: "Ely Ermawati", loc: "BRIND", div: "BPI" },
-                { name: "Leticia Amora Loviani", loc: "BRIND", div: "Event" },
-                { name: "Eify Tafrichadhea", loc: "Brighton Priority Jemursari", div: "Finance" },
-                { name: "Duwi Khusnul", loc: "BRIND", div: "Finance" },
-                { name: "Bayu Hariadi", loc: "Brighton Signature HR Muhammad", div: "General Affair & Purchasing" },
-                { name: "Dewi Nur Ayundari", loc: "BRIND", div: "IT" },
-                { name: "Setya Reyhannino Osa", loc: "Brighton Excellent Malang", div: "Operasional" },
-                { name: "Salsabila Atikah Febrianti", loc: "Brighton Sky Infinite Darmo Hill", div: "Operasional" },
-                { name: "Muhamad Eidho Isnaeni Harhestian", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
-                { name: "Kirana Pramudita", loc: "BRIND", div: "UNI" }
+                { name: "Ely", loc: "BRIND", div: "BPI" },
+                { name: "Cia", loc: "BRIND", div: "Event" },
+                { name: "Eify", loc: "Brighton Priority Jemursari", div: "Finance" },
+                { name: "Duwi", loc: "BRIND", div: "Finance" },
+                { name: "Bayu", loc: "Brighton Signature HR Muhammad", div: "General Affair & Purchasing" },
+                { name: "Yunda", loc: "BRIND", div: "IT" },
+                { name: "Setya", loc: "Brighton Excellent Malang", div: "Operasional" },
+                { name: "Salsa", loc: "Brighton Sky Infinite Darmo Hill", div: "Operasional" },
+                { name: "Eidho", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
+                { name: "Kirana", loc: "BRIND", div: "UNI" }
             ]
         },
         {
             name: "INTEGRITY",
             members: [
-                { name: "Fara Sahira Nur Aisyah", loc: "BRIND", div: "BPI" },
-                { name: "Mochammad Fikri Firmansyah", loc: "BRIND", div: "Event" },
-                { name: "Discha Farinda (Discha)", loc: "Brighton Prosperity Dieng Malang", div: "Finance" },
-                { name: "Satria Febrian Dwi Hidayat", loc: "Brighton Central Sidoarjo", div: "General Affair & Purchasing" },
-                { name: "Irfan Zanuaris Anto", loc: "Brighton Sky Infinite Darmo Hill", div: "General Affair & Purchasing" },
-                { name: "Arfiyan Wahyu Pratama", loc: "BRIND", div: "IT" },
-                { name: "Fenica Shannia Tampubolon", loc: "BRIND", div: "Legal" },
-                { name: "Rachma Dwi Oktaviani", loc: "Brighton Mulyosari", div: "Operasional" },
+                { name: "Fara", loc: "BRIND", div: "BPI" },
+                { name: "Fikri", loc: "BRIND", div: "Event" },
+                { name: "Discha", loc: "Brighton Prosperity Dieng Malang", div: "Finance" },
+                { name: "Satria", loc: "Brighton Central Sidoarjo", div: "General Affair & Purchasing" },
+                { name: "Irfan", loc: "Brighton Sky Infinite Darmo Hill", div: "General Affair & Purchasing" },
+                { name: "Arfiyan", loc: "BRIND", div: "IT" },
+                { name: "Nia", loc: "BRIND", div: "Legal" },
+                { name: "Rachma", loc: "Brighton Mulyosari", div: "Operasional" },
                 { name: "Ratna", loc: "BRIND", div: "Operasional" },
-                { name: "Zulfatul Nikmah", loc: "BRIND", div: "Tax & Accounting" }
+                { name: "Zulfa", loc: "BRIND", div: "Tax & Accounting" }
             ]
         },
         {
             name: "GROW",
             members: [
-                { name: "Farah Ainul Khaq", loc: "BRIND", div: "BPI" },
-                { name: "Tio Satrio Wibisono", loc: "BRIND", div: "Event" },
-                { name: "Deva Ghany Azizah", loc: "Brighton Signature HR Muhammad", div: "Finance" },
-                { name: "M.Rosman", loc: "Brighton Titanium Satelit", div: "General Affair & Purchasing" },
-                { name: "Rizqi Achmad Subagya", loc: "Brighton Suhat Malang", div: "General Affair & Purchasing" },
-                { name: "Arman Maulana Saputra", loc: "BRIND", div: "IT" },
-                { name: "Rahullah Qoidun Santiaji Dinan", loc: "BRIND", div: "Legal" },
-                { name: "Azizah Nur Kholifah", loc: "Brighton One CBD Surabaya", div: "Operasional" },
-                { name: "Rizky Amalia", loc: "BRIND", div: "Operasional" },
+                { name: "Farah", loc: "BRIND", div: "BPI" },
+                { name: "Tio", loc: "BRIND", div: "Event" },
+                { name: "Deva", loc: "Brighton Signature HR Muhammad", div: "Finance" },
+                { name: "Rosman", loc: "Brighton Titanium Satelit", div: "General Affair & Purchasing" },
+                { name: "Rizqi", loc: "Brighton Suhat Malang", div: "General Affair & Purchasing" },
+                { name: "Arman", loc: "BRIND", div: "IT" },
+                { name: "Aji", loc: "BRIND", div: "Legal" },
+                { name: "Azizah", loc: "Brighton One CBD Surabaya", div: "Operasional" },
+                { name: "Amal", loc: "BRIND", div: "Operasional" },
                 { name: "Miranti", loc: "BRIND", div: "UNI" }
             ]
         },
         {
             name: "HARMONY",
             members: [
-                { name: "Muchammad Arief", loc: "BRIND", div: "BPI" },
-                { name: "Aditya Indah Febrianti", loc: "Brighton Central Sidoarjo", div: "Finance" },
-                { name: "Dynar Anindya Damayanti", loc: "Brighton Sky Infinite Darmo Hill", div: "Finance" },
-                { name: "Sokhib Maulana", loc: "Brighton Excellent Malang", div: "General Affair & Purchasing" },
+                { name: "Arief", loc: "BRIND", div: "BPI" },
+                { name: "Indah", loc: "Brighton Central Sidoarjo", div: "Finance" },
+                { name: "Dynar", loc: "Brighton Sky Infinite Darmo Hill", div: "Finance" },
+                { name: "Sokhib", loc: "Brighton Excellent Malang", div: "General Affair & Purchasing" },
                 { name: "Arul", loc: "Brighton Champion Citraland", div: "General Affair & Purchasing" },
-                { name: "Ahmad Abu Hasan", loc: "BRIND", div: "IT" },
-                { name: "Anastasya Maylan Anggraini", loc: "BRIND", div: "Legal" },
-                { name: "Ineke Permata", loc: "Brighton Pakuwon Indah", div: "Operasional" },
-                { name: "Nur Aisyah Wahyu Safitri", loc: "BRIND", div: "Operasional" },
-                { name: "Kafit Nur Rohman", loc: "BRIND", div: "Tax & Accounting" }
+                { name: "Hasan", loc: "BRIND", div: "IT" },
+                { name: "Tasya", loc: "BRIND", div: "Legal" },
+                { name: "Ineke", loc: "Brighton Pakuwon Indah", div: "Operasional" },
+                { name: "Ais", loc: "BRIND", div: "Operasional" },
+                { name: "Kafit", loc: "BRIND", div: "Tax & Accounting" }
             ]
         },
         {
             name: "TEAMWORK",
             members: [
-                { name: "Wahyu Aldi Setiwan", loc: "BRIND", div: "BPI" },
-                { name: "Nabila Rizky Amalia Putri", loc: "Brighton First Graha", div: "Finance" },
+                { name: "Awan", loc: "BRIND", div: "BPI" },
+                { name: "Nabila", loc: "Brighton First Graha", div: "Finance" },
                 { name: "Pipit", loc: "Brighton Suhat Malang", div: "Finance" },
-                { name: "Hanjaya Mandala Putra", loc: "Brighton Gedangan Sidoarjo", div: "General Affair & Purchasing" },
-                { name: "Agus Susilo", loc: "BRIND", div: "General Affair & Purchasing" },
-                { name: "Ayu Aulia Andhani", loc: "BRIND", div: "IT" },
-                { name: "Shania Hendra G", loc: "BRIND", div: "Marketing Communication" },
-                { name: "Rizky Puspita Arum", loc: "Brighton Pakuwon Indah", div: "Operasional" },
-                { name: "Reza Ayu", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
-                { name: "Mitia Eka Renisa", loc: "BRIND", div: "UNI" }
+                { name: "Putra", loc: "Brighton Gedangan Sidoarjo", div: "General Affair & Purchasing" },
+                { name: "Ayu", loc: "BRIND", div: "IT" },
+                { name: "Shania", loc: "BRIND", div: "Marketing Communication" },
+                { name: "Ita", loc: "Brighton Pakuwon Indah", div: "Operasional" },
+                { name: "Reza", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
+                { name: "Mitia", loc: "BRIND", div: "UNI" }
             ]
         },
         {
             name: "AGILE",
             members: [
-                { name: "Jessi Kevita", loc: "BRIND", div: "Customer Service" },
-                { name: "Erni Damayanti", loc: "Brighton Gresik", div: "Finance" },
-                { name: "Andien Faysha Rahmatul Adha", loc: "BRIND", div: "Finance" },
-                { name: "Samsul Maarif", loc: "Brighton First Graha", div: "General Affair & Purchasing" },
-                { name: "Dodik Susanto", loc: "BRIND", div: "General Affair & Purchasing" },
-                { name: "Frendy Hariyono", loc: "BRIND", div: "IT" },
-                { name: "Vaneza Teresya Awanda Putri", loc: "Brighton Gedangan Sidoarjo", div: "Operasional" },
-                { name: "Verona Wulanmu Haji", loc: "Brighton Wisata Bukit Mas (WBM)", div: "Operasional" },
-                { name: "Rendy Tridolok Silaban", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
+                { name: "Jessi", loc: "BRIND", div: "Customer Service" },
+                { name: "Erni", loc: "Brighton Gresik", div: "Finance" },
+                { name: "Andien", loc: "BRIND", div: "Finance" },
+                { name: "Samsul", loc: "Brighton First Graha", div: "General Affair & Purchasing" },
+                { name: "Dodik", loc: "BRIND", div: "General Affair & Purchasing" },
+                { name: "Frendy", loc: "BRIND", div: "IT" },
+                { name: "Vaneza", loc: "Brighton Gedangan Sidoarjo", div: "Operasional" },
+                { name: "Vero", loc: "Brighton Wisata Bukit Mas (WBM)", div: "Operasional" },
+                { name: "Rendy", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" },
                 { name: "Kania", loc: "BRIND", div: "UNI" }
             ]
         },
         {
             name: "RISE",
             members: [
-                { name: "Refo Gustian", loc: "BRIND", div: "Design & Multimedia" },
-                { name: "Wahyu Dwi Anggraeni", loc: "Brighton Mulyosari", div: "Finance" },
-                { name: "Jauzaa H", loc: "BRIND", div: "Finance" },
-                { name: "Imam Syafi'I", loc: "Brighton One CBD Surabaya", div: "General Affair & Purchasing" },
-                { name: "Timotius Martin U", loc: "BRIND", div: "General Affair & Purchasing" },
-                { name: "Jaenal Rudini", loc: "BRIND", div: "IT" },
-                { name: "Intan Maulidah", loc: "Brighton First Graha", div: "Operasional" },
-                { name: "Dina Ainis Syifa'", loc: "BRIND", div: "Operasional" },
-                { name: "Syarindra Mutiara", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" }
+                { name: "Refo", loc: "BRIND", div: "Design & Multimedia" },
+                { name: "Dwi", loc: "Brighton Mulyosari", div: "Finance" },
+                { name: "Jauzaa", loc: "BRIND", div: "Finance" },
+                { name: "Syafi'i", loc: "Brighton One CBD Surabaya", div: "General Affair & Purchasing" },
+                { name: "Martin", loc: "BRIND", div: "General Affair & Purchasing" },
+                { name: "Rudi", loc: "BRIND", div: "IT" },
+                { name: "Intan", loc: "Brighton First Graha", div: "Operasional" },
+                { name: "Dina", loc: "BRIND", div: "Operasional" },
+                { name: "Syar", loc: "BRIND", div: "Relation - Primary - LSP - Fast Loan" }
             ]
         },
         {
             name: "HELPFUL",
             members: [
-                { name: "Aji Novianto Pradana", loc: "BRIND", div: "Design & Multimedia" },
-                { name: "Syelin Triakartika", loc: "Brighton Pakuwon Indah", div: "Finance" },
-                { name: "Iryne Indahs", loc: "BRIND", div: "Finance" },
-                { name: "Anggik Suprianto", loc: "Brighton Pakuwon Indah", div: "General Affair & Purchasing" },
-                { name: "Fikri Amirullah", loc: "BRIND", div: "General Affair & Purchasing" },
-                { name: "Kelvin Christian Sanger", loc: "BRIND", div: "IT" },
-                { name: "Zulkifli Alamsyah", loc: "Brighton Gresik", div: "Operasional" },
+                { name: "Aji", loc: "BRIND", div: "Design & Multimedia" },
+                { name: "Syelin", loc: "Brighton Pakuwon Indah", div: "Finance" },
+                { name: "Iryne", loc: "BRIND", div: "Finance" },
+                { name: "Anggik", loc: "Brighton Pakuwon Indah", div: "General Affair & Purchasing" },
+                { name: "Fikri", loc: "BRIND", div: "General Affair & Purchasing" },
+                { name: "Kelvin C.", loc: "BRIND", div: "IT" },
+                { name: "Alam", loc: "Brighton Gresik", div: "Operasional" },
                 { name: "Djinin", loc: "BRIND", div: "Operasional" },
                 { name: "Saiful", loc: "BRIND", div: "Tax & Accounting" }
             ]
@@ -137,15 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: "MULTIPLY",
             members: [
-                { name: "Moh. Samsul Arifin", loc: "BRIND", div: "Customer Service" },
-                { name: "Yuyun Kurniawati", loc: "Brighton Pakuwon Indah", div: "Finance" },
-                { name: "Ida Kurnia", loc: "BRIND", div: "Finance" },
-                { name: "Maulana Akhtar Al Hafiz", loc: "Brighton Premier Bukit Mas", div: "General Affair & Purchasing" },
-                { name: "Juli Arianto", loc: "BRIND", div: "General Affair & Purchasing" },
-                { name: "Mochamad Rizky Ramadhan", loc: "BRIND", div: "IT" },
-                { name: "Abdurahman Ghani", loc: "Brighton Mulyosari", div: "Operasional" },
-                { name: "Fanisa Risalia", loc: "BRIND", div: "Operasional" },
-                { name: "Dona Agustina", loc: "BRIND", div: "Tax & Accounting" }
+                { name: "Ipin", loc: "BRIND", div: "Customer Service" },
+                { name: "Yuyun", loc: "Brighton Pakuwon Indah", div: "Finance" },
+                { name: "Ida", loc: "BRIND", div: "Finance" },
+                { name: "Hafiz", loc: "Brighton Premier Bukit Mas", div: "General Affair & Purchasing" },
+                { name: "Juli", loc: "BRIND", div: "General Affair & Purchasing" },
+                { name: "Kiki", loc: "BRIND", div: "IT" },
+                { name: "Ghani", loc: "Brighton Mulyosari", div: "Operasional" },
+                { name: "Fanisa", loc: "BRIND", div: "Operasional" },
+                { name: "Dona", loc: "BRIND", div: "Tax & Accounting" }
             ]
         }
     ];
