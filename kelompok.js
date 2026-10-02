@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DATA RESMI 10 KELOMPOK BRIGHTON NOCHE 2026 (Update Terbaru dari kelompok update.xlsx)
+    // DATA RESMI 10 KELOMPOK BRIGHTON NOCHE 2026 (Update Terbaru dari update data tim.xlsx)
     const teamsDataFull = [
         {
             name: "BRIGHT",

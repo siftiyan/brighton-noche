@@ -1,18 +1,18 @@
 // JavaScript: Live 10 Teams Tournament Bagan & Parallax System (Mobile Optimized)
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DATA 10 KELOMPOK
-const initialTeams = [
+    // 1. DATA 10 KELOMPOK (Disesuaikan dengan manifes 96 peserta resmi)
+    const initialTeams = [
         { id: 1, name: "BRIGHT", title: "BRIGHT", members: 10, loves: 5 },
-        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 5  },
-        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5  },
-        { id: 4, name: "GROW", title: "GROW", members: 10, loves: 5  },
-        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 5  },
-        { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 5 },
-        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 5  },
-        { id: 8, name: "RISE", title: "RISE", members: 9, loves: 5  },
-        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 9, loves: 5  },
-        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 9, loves: 5  }
+        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 5 },
+        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
+        { id: 4, name: "GROW", title: "GROW", members: 10, loves: 5 },
+        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 5 },
+        { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 9, loves: 5 },
+        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 5 },
+        { id: 8, name: "RISE", title: "RISE", members: 9, loves: 5 },
+        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 9, loves: 5 },
+        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 9, loves: 5 }
     ];
     
     let teamsData = JSON.parse(localStorage.getItem('brighton_noche_teams')) || initialTeams;
@@ -158,7 +158,7 @@ const initialTeams = [
         }
     });
 
-    // 4. PARALLAX SCROLL (Nonaktif/Ringan pada perangkat Touch/Mobile agar bebas lag)
+    // 4. PARALLAX SCROLL (Ringan pada perangkat Touch/Mobile)
     const parallaxLayers = document.querySelectorAll('.parallax-layer');
     const heroContent = document.querySelector('.hero-content');
     let ticking = false;
@@ -232,7 +232,6 @@ const initialTeams = [
             document.body.classList.toggle('menu-open');
         });
 
-        // Tutup saat item menu diklik
         document.querySelectorAll('.nav-item, .nav-cta-btn').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
@@ -241,7 +240,6 @@ const initialTeams = [
             });
         });
 
-        // Tutup saat klik di luar menu navigasi
         document.addEventListener('click', (e) => {
             if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target) && navLinks.classList.contains('active')) {
                 mobileToggle.classList.remove('active');

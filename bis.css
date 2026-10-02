@@ -196,7 +196,7 @@
     color: var(--text-muted);
 }
 
-/* Banner Catatan Perjalanan (Bawah Kartu) */
+/* Banner Catatan Perjalanan */
 .trip-notes-banner {
     background: #FFFFFF;
     border-radius: 20px;
@@ -442,9 +442,7 @@
     display: inline-block;
 }
 
-/* ==============================================================
-   HIGHLIGHT BARIS PIC (Sesuai Sel Oranye Excel #FCE5CD)
-   ============================================================== */
+/* HIGHLIGHT BARIS PIC (#FCE5CD) */
 .badge-pic {
     background: linear-gradient(135deg, #FF9800, #E65100);
     color: #FFFFFF;
