@@ -553,7 +553,7 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------------------------------------------------
-   GRAFIK LIVE & TOURNAMENT RULES (LOVE SYSTEM)
+   GRAFIK LIVE & TOURNAMENT RULES (LOVE / BLOOM SYSTEM)
    ------------------------------------------------------------- */
 .games-rule-banner {
     display: grid;
@@ -586,7 +586,6 @@ h1, h2, h3, h4 {
     color: var(--earth-warm);
 }
 
-/* Ikon Hati Merah dan Berdenyut di Banner Aturan */
 .heart-icon,
 .rule-icon.heart-icon {
     background: rgba(230, 57, 70, 0.12) !important;
@@ -614,7 +613,7 @@ h1, h2, h3, h4 {
     line-height: 1.4;
 }
 
-/* Philosophy Grid (Rules & The Goal) */
+/* Philosophy Grid */
 .bloom-philosophy-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -883,9 +882,6 @@ h1, h2, h3, h4 {
     gap: 8px;
 }
 
-/* ==============================================================
-   ANIMASI DENYUT HATI & WARNA MERAH MENYALA
-   ============================================================== */
 .love-score-wrap i,
 .love-score-wrap .fa-heart {
     font-size: 1.75rem;
@@ -896,21 +892,11 @@ h1, h2, h3, h4 {
 }
 
 @keyframes heartBeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    14% {
-        transform: scale(1.22);
-    }
-    28% {
-        transform: scale(1);
-    }
-    42% {
-        transform: scale(1.16);
-    }
-    70% {
-        transform: scale(1);
-    }
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.22); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.16); }
+    70% { transform: scale(1); }
 }
 
 .love-points-count {
@@ -1014,7 +1000,6 @@ h1, h2, h3, h4 {
     position: relative;
 }
 
-/* Menggunakan File Foto Lokal dari folder images/ */
 .flyingfox-bg  { background-image: url('images/flyingfox.jpg'); }
 .rappelling-bg { background-image: url('images/rappeling.jpg'); }
 .fungames-bg   { background-image: url('images/fungames.jpg'); }
@@ -1192,7 +1177,7 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------------------------------------------------
-   SCHEDULE TIMELINE (TEGAK LURUS SEMPURNA)
+   SCHEDULE TIMELINE
    ------------------------------------------------------------- */
 .sec-subtitle {
     font-size: 0.8rem;
@@ -1238,7 +1223,6 @@ h1, h2, h3, h4 {
     position: relative;
 }
 
-/* Garis vertikal di sumbu tengah: 150px waktu + 21px setengah bulatan = 171px */
 .schedule-timeline::before {
     content: '';
     position: absolute;
@@ -1389,11 +1373,66 @@ h1, h2, h3, h4 {
 .fw-yes { background: #E8F5E9; color: #2E7D32; padding: 7px 14px; border-radius: 30px; font-weight: 600; font-size: 0.82rem; }
 .fw-no { background: #FFEBEE; color: #C62828; padding: 7px 14px; border-radius: 30px; font-weight: 600; font-size: 0.82rem; }
 
-.color-swatch-box { background: var(--bg-cream); padding: 18px; border-radius: 14px; }
-.swatches { display: flex; gap: 12px; flex-wrap: wrap; }
-.swatch-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.swatch-item span { width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid #FFFFFF; }
-.swatch-item small { font-size: 0.7rem; color: var(--text-muted); }
+/* Palet Warna Swatch Rapi & Presisi */
+.color-swatch-box {
+    background: var(--bg-cream);
+    padding: 18px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(197, 168, 128, 0.25);
+    margin-top: 15px;
+}
+
+.swatch-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+    margin-bottom: 14px;
+}
+
+.swatches {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.swatch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 65px;
+}
+
+.swatch-item .swatch-circle,
+.swatch-item span {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    border: 2.5px solid #FFFFFF;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+
+.swatch-item:hover .swatch-circle,
+.swatch-item:hover span {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.swatch-item small {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.2;
+    display: block;
+    word-break: break-word;
+}
 
 .essentials-card {
     background: #FFFFFF;
@@ -1660,7 +1699,6 @@ h1, h2, h3, h4 {
         height: 270px;
     }
 
-    /* Penyesuaian Mobile: Garis & Bulatan Timeline Tetap Lurus Presisi */
     .schedule-timeline::before {
         left: 21px;
         top: 21px;

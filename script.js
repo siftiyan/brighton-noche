@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             bodyFont: { size: 12 },
                             callbacks: {
                                 label: function(context) {
-                                    return ` Total: ${context.parsed.y} Token Love ❤️`;
+                                    return ` Total: ${context.parsed.y} Token Bloom ❤️`;
                                 }
                             }
                         }
