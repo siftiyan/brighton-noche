@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DATA RESMI ARMADA & PENUMPANG (Update Terbaru dari update data bis.xlsx)
+    // DATA RESMI ARMADA & PENUMPANG (Update: Hiace Panitia Dihapus)
     const vehiclesData = [
         {
             name: "Bis 1 - Spazio - Halte Pondok Jati",
@@ -117,24 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 { no: "4", name: "Rizqi", div: "GENERAL AFFAIR", kantor: "Brighton Suhat Malang", titik: "Soekarno Hatta Malang", is_pic: false },
                 { no: "5", name: "Shokib", div: "GENERAL AFFAIR", kantor: "Brighton Excellent", titik: "Soekarno Hatta Malang", is_pic: false },
                 { no: "6", name: "Setya", div: "OPERASIONAL", kantor: "Brighton Excellent", titik: "Soekarno Hatta Malang", is_pic: false }
-            ]
-        },
-        {
-            name: "Hiace Panitia - Spazio",
-            icon: "fa-van-shuttle",
-            passengers: [
-                { no: "1", name: "Widya", div: "HRD", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "2", name: "Rudiyanto", div: "HRD", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "3", name: "Rudi", div: "IT", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "4", name: "Hanita", div: "HRD", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "5", name: "Tria", div: "HOA", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "6", name: "Siftiyan", div: "HRD", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "7", name: "Indah", div: "Finance", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "8", name: "Ayu", div: "Operasional", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "9", name: "Tika", div: "HOA", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "10", name: "Reny", div: "HOA", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "11", name: "Luke", div: "RELATION - LSP - FAST LOAN - PRIMARY", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false },
-                { no: "12", name: "Rosemini", div: "EVENT", kantor: "Brighton Real Estate", titik: "Spazio Office", is_pic: false }
             ]
         }
     ];
