@@ -2,17 +2,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA 10 KELOMPOK (Disesuaikan dengan manifes 96 peserta resmi)
+// 1. DATA 10 KELOMPOK (Update manifes 101 peserta resmi)
     const initialTeams = [
         { id: 1, name: "BRIGHT", title: "BRIGHT", members: 10, loves: 5 },
-        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 5 },
+        { id: 2, name: "RESPECT", title: "RESPECT", members: 11, loves: 5 },
         { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 5 },
         { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 5 },
-        { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 9, loves: 5 },
+        { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 5 },
         { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 5 },
-        { id: 8, name: "RISE", title: "RISE", members: 9, loves: 5 },
-        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 9, loves: 5 },
-        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 9, loves: 5 }
+        { id: 8, name: "RISE", title: "RISE", members: 10, loves: 5 },
+        { id: 9, name: "HELPFUL", title: "HELPFUL", members: 10, loves: 5 },
+        { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 10, loves: 5 }
     ];
     
     let teamsData = JSON.parse(localStorage.getItem('brighton_noche_teams')) || initialTeams;
