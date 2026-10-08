@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { "no": "32", "name": "Hasan", "div": "IT", "kantor": "BRIGHTON REAL ESTATE", "titik": "Spazio Office", "is_pic": false },
                 { "no": "33", "name": "Dina", "div": "OPERASIONAL", "kantor": "BRIGHTON REAL ESTATE", "titik": "Taman Pinang Sidoarjo", "is_pic": false },
                 { "no": "34", "name": "Djinin", "div": "OPERASIONAL", "kantor": "BRIGHTON REAL ESTATE", "titik": "Taman Pinang Sidoarjo", "is_pic": false },
-                { "no": "35", "name": "Atika", "div": "RELATION - LSP - FAST LOAN - PRIMARY", "kantor": "BRIGHTON REAL ESTATE", "titik": "Spazio Office", "is_pic": false },
+                { "no": "35", "name": "Atika", "div": "RELATION - LSP - FAST LOAN - PRIMARY", "kantor": "BRIGHTON REAL ESTATE", "titik": "Taman Pinang Sidoarjo", "is_pic": false },
                 { "no": "36", "name": "Eidho", "div": "RELATION - LSP - FAST LOAN - PRIMARY", "kantor": "BRIGHTON REAL ESTATE", "titik": "Spazio Office", "is_pic": false },
                 { "no": "37", "name": "Rendy", "div": "RELATION - LSP - FAST LOAN - PRIMARY", "kantor": "BRIGHTON REAL ESTATE", "titik": "Spazio Office", "is_pic": false },
                 { "no": "38", "name": "Sisca", "div": "RELATION - LSP - FAST LOAN - PRIMARY", "kantor": "BRIGHTON REAL ESTATE", "titik": "Spazio Office", "is_pic": false },
