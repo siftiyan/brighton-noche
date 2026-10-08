@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { "name": "Annisa", "loc": "Brighton Central Sidoarjo", "div": "Operasional" },
                 { "name": "Indah", "loc": "Brighton Signature HR Muhammad", "div": "Operasional" },
                 { "name": "Sisca", "loc": "Brighton Real Estate", "div": "Relation - Primary - LSP - Fast Loan" },
-                { "name": "Sharley", "loc": "Brighton Real Estate", "div": "Tax & Accounting" }
+                { "name": "Sharley", "loc": "Brighton Real Estate", "div": "Tax & Accounting" },
+                { "name": "Adel", "loc": "Brighton Excellent Malang", "div": "Finance" },
             ]
         },
         {
