@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA 10 KELOMPOK (Disesuaikan dengan manifes 96 peserta resmi)
 // 1. DATA 10 KELOMPOK (Update manifes 101 peserta resmi)
     const initialTeams = [
-        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 10, loves: 5 },
-        { id: 2, name: "RESPECT", title: "RESPECT", members: 11, loves: 5 },
+        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 5 },
+        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 5 },
         { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 5 },
         { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 5 },

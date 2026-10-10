@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 { "name": "Salsa", "loc": "Brighton Sky Infinite Darmo Hill", "div": "Operasional" },
                 { "name": "Eidho", "loc": "Brighton Real Estate", "div": "Relation - Primary - LSP - Fast Loan" },
                 { "name": "Kirana", "loc": "Brighton Real Estate", "div": "UNI" },
-                { "name": "Nuril", "loc": "Brighton Real Estate", "div": "Tax & Accounting" }
             ]
         },
         {
