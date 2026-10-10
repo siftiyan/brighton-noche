@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { "name": "Hasan", "loc": "Brighton Real Estate", "div": "IT" },
                 { "name": "Tasya", "loc": "Brighton Real Estate", "div": "Legal" },
                 { "name": "Ineke", "loc": "Brighton Pakuwon Indah", "div": "Operasional" },
-                { "name": "Atika", "loc": "Brighton Real Estate", "div": "Relation" },
+                { "name": "Nuril", "loc": "Brighton Real Estate", "div": "Tax & Accounting" },
                 { "name": "Kafit", "loc": "Brighton Real Estate", "div": "Tax & Accounting" }
             ]
         },
