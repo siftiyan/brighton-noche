@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     // UBAH NILAI ATAU DATA TIM LANGSUNG DI SINI
     const teamsData = [
-        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 15 },
-        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 15 },
-        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
+        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 20 },
+        { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 20 },
+        { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 10 },
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 15 },
-        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 25 },
+        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 30 },
         { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 15 },
-        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 23 },
+        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 28 },
         { id: 8, name: "RISE", title: "RISE", members: 10, loves: 5 },
         { id: 9, name: "HELPFUL", title: "HELPFUL", members: 10, loves: 15 },
         { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 10, loves: 5 }
