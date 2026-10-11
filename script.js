@@ -17,7 +17,7 @@ const db = firebase.database();
 
 document.addEventListener('DOMContentLoaded', () => {
     const initialTeams = [
-        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 5 },
+        { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 15 },
         { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 5 },
         { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 15 },
