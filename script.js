@@ -1,8 +1,21 @@
-// JavaScript: Live 10 Teams Tournament Bagan & Parallax System (Mobile Optimized)
+// Konfigurasi Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyD9a5nZtzD8ypqTlsdZwblmKVCZI6ttgvU",
+    authDomain: "noche-brighton.firebaseapp.com",
+    databaseURL: "https://noche-brighton-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "noche-brighton",
+    storageBucket: "noche-brighton.firebasestorage.app",
+    messagingSenderId: "483636777615",
+    appId: "1:483636777615:web:dc14c477fbecefb81716fa",
+    measurementId: "G-BWC5LKGP0K"
+};
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+const db = firebase.database();
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DATA 10 KELOMPOK (Disesuaikan dengan manifes 96 peserta resmi)
-// 1. DATA 10 KELOMPOK (Update manifes 101 peserta resmi)
     const initialTeams = [
         { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 5 },
         { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 5 },
@@ -20,10 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamsContainer = document.getElementById('teamsContainer');
     let teamsChart = null;
 
-    // Helper untuk mengecek layar mobile
     const isMobile = () => window.innerWidth < 768;
 
-    // 2. INITIALIZE CHART.JS (Responsif & Mobile Touch Friendly)
+    // SINKRONISASI REALTIME KE FIREBASE
+    db.ref('bloom_teams').on('value', (snapshot) => {
+        const liveData = snapshot.val();
+        if (liveData && Array.isArray(liveData)) {
+            teamsData = liveData;
+            localStorage.setItem('brighton_noche_teams', JSON.stringify(liveData));
+            renderLeaderboard();
+        }
+    });
+
+    // 2. INITIALIZE CHART.JS
     function initOrUpdateChart() {
         const ctx = document.getElementById('teamsBarChart');
         if (!ctx) return;
@@ -147,19 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderLeaderboard();
 
-    // Auto-refresh interval setiap 15 detik
-    setInterval(() => {
-        renderLeaderboard();
-    }, 15000);
-
-    // Resize event untuk penyesuaian label chart di mobile secara dinamis
     window.addEventListener('resize', () => {
         if (teamsChart) {
             initOrUpdateChart();
         }
     });
 
-    // 4. PARALLAX SCROLL (Ringan pada perangkat Touch/Mobile)
+    // 4. PARALLAX SCROLL
     const parallaxLayers = document.querySelectorAll('.parallax-layer');
     const heroContent = document.querySelector('.hero-content');
     let ticking = false;
@@ -212,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 6. NAVBAR SCROLL & MOBILE TOGGLE + CLOSE ON CLICK OUTSIDE
+    // 6. NAVBAR SCROLL & MOBILE TOGGLE
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
