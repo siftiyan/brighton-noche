@@ -1,22 +1,6 @@
-// Konfigurasi Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyD9a5nZtzD8ypqTlsdZwblmKVCZI6ttgvU",
-    authDomain: "noche-brighton.firebaseapp.com",
-    databaseURL: "https://noche-brighton-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "noche-brighton",
-    storageBucket: "noche-brighton.firebasestorage.app",
-    messagingSenderId: "483636777615",
-    appId: "1:483636777615:web:dc14c477fbecefb81716fa",
-    measurementId: "G-BWC5LKGP0K"
-};
-
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
-const db = firebase.database();
-
 document.addEventListener('DOMContentLoaded', () => {
-    const initialTeams = [
+    // UBAH NILAI ATAU DATA TIM LANGSUNG DI SINI
+    const teamsData = [
         { id: 1, name: "BRIGHT", title: "BRIGHT", members: 11, loves: 15 },
         { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 15 },
         { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
@@ -29,21 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 10, loves: 5 }
     ];
 
-    // Ambil data dari local storage jika ada, jika tidak pakai initialTeams
-    let storedTeams = null;
-    try {
-        storedTeams = JSON.parse(localStorage.getItem('brighton_noche_teams'));
-    } catch (e) {
-        storedTeams = null;
-    }
-    let teamsData = (Array.isArray(storedTeams) && storedTeams.length > 0) ? storedTeams : initialTeams;
-
     const teamsContainer = document.getElementById('teamsContainer');
     let teamsChart = null;
 
     const isMobile = () => window.innerWidth < 768;
 
-    // 1. INITIALIZE CHART.JS (Langsung render & support update instan)
+    // 1. INITIALIZE CHART.JS
     function initOrUpdateChart() {
         const ctx = document.getElementById('teamsBarChart');
         if (!ctx || typeof Chart === 'undefined') return;
@@ -65,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (teamsChart.options?.scales?.x?.ticks?.font) {
                 teamsChart.options.scales.x.ticks.font.size = isMobile() ? 10 : 12;
             }
-            teamsChart.update('none'); // Update instan tanpa lag
+            teamsChart.update('none');
         } else {
             teamsChart = new Chart(ctx, {
                 type: 'bar',
@@ -85,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     responsive: true,
                     maintainAspectRatio: false,
                     animation: {
-                        duration: 400,
+                        duration: 500,
                         easing: 'easeOutQuart'
                     },
                     plugins: {
@@ -162,30 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (syncEl) {
             const now = new Date();
             const timeStr = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            syncEl.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Data Terupdate: ${timeStr} WIB`;
+            syncEl.innerHTML = `<i class="fa-solid fa-check"></i> Data Terupdate: ${timeStr} WIB`;
         }
 
         initOrUpdateChart();
     }
 
-    // Langsung render pertama kali agar tidak blank/stuck
+    // Render tabel & chart pertama kali
     renderLeaderboard();
-
-    // 3. SINKRONISASI REALTIME KE FIREBASE
-    db.ref('bloom_teams').on('value', (snapshot) => {
-        const liveData = snapshot.val();
-        if (liveData) {
-            // Tangani jika Firebase mengembalikan Object atau Array
-            const parsedData = Array.isArray(liveData) ? liveData : Object.values(liveData);
-            if (parsedData.length > 0) {
-                teamsData = parsedData;
-                localStorage.setItem('brighton_noche_teams', JSON.stringify(parsedData));
-                renderLeaderboard();
-            }
-        }
-    }, (error) => {
-        console.warn("Gagal terhubung ke Firebase, menggunakan data lokal:", error);
-    });
 
     window.addEventListener('resize', () => {
         if (teamsChart) {
@@ -193,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. PARALLAX SCROLL
+    // 3. PARALLAX SCROLL
     const parallaxLayers = document.querySelectorAll('.parallax-layer');
     const heroContent = document.querySelector('.hero-content');
     let ticking = false;
@@ -221,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
-    // 5. LIVE COUNTDOWN TIMER (11 OKTOBER 2026)
+    // 4. LIVE COUNTDOWN TIMER (11 OKTOBER 2026)
     const targetDate = new Date('2026-10-11T05:30:00+07:00').getTime();
     function updateCountdown() {
         const now = new Date().getTime();
@@ -246,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 6. NAVBAR SCROLL & MOBILE TOGGLE
+    // 5. NAVBAR SCROLL & MOBILE TOGGLE
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
