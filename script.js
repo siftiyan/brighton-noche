@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 5 },
         { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 5 },
         { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 5 },
-        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 5 },
+        { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 6 },
         { id: 8, name: "RISE", title: "RISE", members: 10, loves: 5 },
         { id: 9, name: "HELPFUL", title: "HELPFUL", members: 10, loves: 5 },
         { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 10, loves: 5 }
