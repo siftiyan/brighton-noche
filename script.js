@@ -21,41 +21,40 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 2, name: "RESPECT", title: "RESPECT", members: 10, loves: 15 },
         { id: 3, name: "INTEGRITY", title: "INTEGRITY", members: 10, loves: 5 },
         { id: 4, name: "GROW", title: "GROW", members: 10, loves: 15 },
-        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 5 },
+        { id: 5, name: "HARMONY", title: "HARMONY", members: 10, loves: 15 },
         { id: 6, name: "TEAMWORK", title: "TEAMWORK", members: 10, loves: 15 },
         { id: 7, name: "AGILE", title: "AGILE", members: 10, loves: 9 },
         { id: 8, name: "RISE", title: "RISE", members: 10, loves: 5 },
         { id: 9, name: "HELPFUL", title: "HELPFUL", members: 10, loves: 15 },
         { id: 10, name: "MULTIPLY", title: "MULTIPLY", members: 10, loves: 5 }
     ];
-    
-    let teamsData = JSON.parse(localStorage.getItem('brighton_noche_teams')) || initialTeams;
+
+    // Ambil data dari local storage jika ada, jika tidak pakai initialTeams
+    let storedTeams = null;
+    try {
+        storedTeams = JSON.parse(localStorage.getItem('brighton_noche_teams'));
+    } catch (e) {
+        storedTeams = null;
+    }
+    let teamsData = (Array.isArray(storedTeams) && storedTeams.length > 0) ? storedTeams : initialTeams;
+
     const teamsContainer = document.getElementById('teamsContainer');
     let teamsChart = null;
 
     const isMobile = () => window.innerWidth < 768;
 
-    // SINKRONISASI REALTIME KE FIREBASE
-    db.ref('bloom_teams').on('value', (snapshot) => {
-        const liveData = snapshot.val();
-        if (liveData && Array.isArray(liveData)) {
-            teamsData = liveData;
-            localStorage.setItem('brighton_noche_teams', JSON.stringify(liveData));
-            renderLeaderboard();
-        }
-    });
-
-    // 2. INITIALIZE CHART.JS
+    // 1. INITIALIZE CHART.JS (Langsung render & support update instan)
     function initOrUpdateChart() {
         const ctx = document.getElementById('teamsBarChart');
-        if (!ctx) return;
+        if (!ctx || typeof Chart === 'undefined') return;
 
-        const labels = teamsData.map(t => isMobile() ? t.title : t.name);
-        const dataValues = teamsData.map(t => t.loves);
+        const labels = teamsData.map(t => isMobile() ? (t.title || t.name) : (t.name || t.title));
+        const dataValues = teamsData.map(t => Number(t.loves) || 0);
 
         const backgroundColors = teamsData.map(t => {
-            if (t.loves >= 14) return 'rgba(197, 168, 128, 0.95)';
-            if (t.loves >= 12) return 'rgba(117, 76, 41, 0.85)';
+            const val = Number(t.loves) || 0;
+            if (val >= 14) return 'rgba(197, 168, 128, 0.95)';
+            if (val >= 12) return 'rgba(117, 76, 41, 0.85)';
             return 'rgba(43, 56, 43, 0.75)';
         });
 
@@ -63,8 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
             teamsChart.data.labels = labels;
             teamsChart.data.datasets[0].data = dataValues;
             teamsChart.data.datasets[0].backgroundColor = backgroundColors;
-            teamsChart.options.scales.x.ticks.font.size = isMobile() ? 10 : 12;
-            teamsChart.update();
+            if (teamsChart.options?.scales?.x?.ticks?.font) {
+                teamsChart.options.scales.x.ticks.font.size = isMobile() ? 10 : 12;
+            }
+            teamsChart.update('none'); // Update instan tanpa lag
         } else {
             teamsChart = new Chart(ctx, {
                 type: 'bar',
@@ -84,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     responsive: true,
                     maintainAspectRatio: false,
                     animation: {
-                        duration: 700,
+                        duration: 400,
                         easing: 'easeOutQuart'
                     },
                     plugins: {
@@ -122,18 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. RENDER LEADERBOARD CARDS
+    // 2. RENDER LEADERBOARD CARDS
     function renderLeaderboard() {
         if (!teamsContainer) return;
 
-        const sortedTeams = [...teamsData].sort((a, b) => b.loves - a.loves);
+        const sortedTeams = [...teamsData].sort((a, b) => (Number(b.loves) || 0) - (Number(a.loves) || 0));
 
         teamsContainer.innerHTML = '';
         sortedTeams.forEach((team, index) => {
             const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
             const card = document.createElement('div');
             card.className = 'team-card';
-            
+
             if (index >= 8) {
                 card.classList.add('centered-last-items');
             }
@@ -141,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <div class="team-rank-badge ${rankClass}">#${index + 1}</div>
                 <div class="team-meta">
-                    <h3>TIM ${team.title}</h3>
-                    <div class="team-members-count"><i class="fa-solid fa-users"></i> ${team.members} Peserta / Tim</div>
+                    <h3>TIM ${team.title || team.name}</h3>
+                    <div class="team-members-count"><i class="fa-solid fa-users"></i> ${team.members || 10} Peserta / Tim</div>
                 </div>
                 <div class="team-love-box">
                     <div>
@@ -167,7 +168,24 @@ document.addEventListener('DOMContentLoaded', () => {
         initOrUpdateChart();
     }
 
+    // Langsung render pertama kali agar tidak blank/stuck
     renderLeaderboard();
+
+    // 3. SINKRONISASI REALTIME KE FIREBASE
+    db.ref('bloom_teams').on('value', (snapshot) => {
+        const liveData = snapshot.val();
+        if (liveData) {
+            // Tangani jika Firebase mengembalikan Object atau Array
+            const parsedData = Array.isArray(liveData) ? liveData : Object.values(liveData);
+            if (parsedData.length > 0) {
+                teamsData = parsedData;
+                localStorage.setItem('brighton_noche_teams', JSON.stringify(parsedData));
+                renderLeaderboard();
+            }
+        }
+    }, (error) => {
+        console.warn("Gagal terhubung ke Firebase, menggunakan data lokal:", error);
+    });
 
     window.addEventListener('resize', () => {
         if (teamsChart) {
